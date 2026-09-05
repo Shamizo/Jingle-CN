@@ -1,146 +1,95 @@
-# Jingle
+Jingle
 
-An all-inclusive Minecraft speedrunning application written in **J**ava for a s**ingle** instance of Minecraft (As
-opposed to Julti which is written for M**ulti**).
+一款用 Java 编写的全功能 Minecraft 速通辅助应用，专为单个 Minecraft 实例设计（与为多实例编写的 Julti 相对）。
 
-Here's an overview of everything in Jingle sorted by the GUI tabs they can be found in.
+以下是 Jingle 中所有功能的概览，按 GUI 选项卡分类。
 
-### Jingle
+Jingle（主界面）
 
-- The instance section at the top will become active when an instance is launched with the vanilla Minecraft launcher,
-  MultiMC (and forks such as prism), or ColorMC (chinese launcher).
-    - `Clear Worlds` will clear all but the last 36 worlds, this is to ensure it doesn't clear anything important for
-      file submission. most of those 36 worlds should be near empty and won't take up much space.
-    - `Go Borderless` will set your game as a borderless window and fill the primary monitor. This button can be
-      right-clicked for customization of the behaviour.
-    - `Package Submission Files` will automatically package worlds and logs needed for speedrun verification. This
-      feature works best when used with SpeedRunIGT 14.0 or later!
-        - MCSR Fairplay also includes file packaging, this should be preferred in versions of the game supported by
-          MCSR Fairplay.
-    - `Open Minecraft Folder` will open the `.minecraft` directory of the instance.
-- Only a s**ingle** instance can be J**ingle**'s focus at any time, it will automatically switch to whatever instance
-  you focus.
-- "Quick Actions" is a section for buttons added by plugins to do actions that are frequent enough to be featured on the
-  main tab in Jingle but not frequent enough to need a hotkey.
-    - Right-clicking quick action buttons may bring you to relevant configuration screens or plugin tabs.
-- `Clear Worlds from All Instances` will do the action of `Clear Worlds` but for all instances that Jingle has ever
-  seen.
-- `Open Jingle Folder` will open the folder containing configurations, save data, scripts, plugins, and more files for
-  Jingle.
+· 顶部的实例区域会在使用原版 Minecraft 启动器、MultiMC（及其分支如 Prism）或 ColorMC（中文启动器）启动实例后变为可用。
+  · 清理世界：会保留最近 36 个世界，删除其余所有世界。这是为了确保提交文件时不会误删重要内容。这 36 个世界中的大部分应该是几乎空的，不会占用太多空间。
+  · 无边框窗口：将游戏设置为无边框窗口并填满主显示器。可右键点击此按钮自定义行为。
+  · 打包提交文件：自动打包速通验证所需的世界和日志文件。此功能在与 SpeedRunIGT 14.0 或更高版本配合使用时效果最佳！
+    · MCSR Fairplay 也包含文件打包功能，在支持 MCSR Fairplay 的游戏版本中应优先使用此功能。
+  · 打开 Minecraft 文件夹：打开该实例的 .minecraft 目录。
+· 任何时候 Jingle 只能聚焦单个实例，它会自动切换到你正在操作的实例。
+· “快捷操作”区域用于显示插件添加的按钮，这些操作足够频繁，值得放在主选项卡上，但又不至于需要单独设置快捷键。
+  · 右键点击快捷操作按钮可能会跳转到相关的配置界面或插件选项卡。
+· 清理所有实例的世界：对 Jingle 曾经见过的所有实例执行 清理世界 操作。
+· 打开 Jingle 文件夹：打开包含 Jingle 的配置、保存数据、脚本、插件等文件的文件夹。
 
-## Options
+选项
 
-- `Check for Updates` will enable checking for updates when launching Jingle, `Enable Pre-Release Updates` will change
-  it to include development versions.
-- `Minimize to Tray` will make it so hiding the Jingle window will also hide it on the task bar, putting it in the "
-  tray" (the up arrow at the bottom left of the screen).
-- `Customize Borderless` will let you customize borderless behaviour.
-- `Auto Borderless` will automatically put detected instances into borderless 3 seconds after it is detected.
+· 检查更新：启用后会在启动 Jingle 时检查更新，启用预发布更新 会使其同时包含开发版本。
+· 最小化到托盘：隐藏 Jingle 窗口时，同时会从任务栏隐藏，只显示在系统托盘（屏幕右下角的向上箭头区域）中。
+· 自定义无边框：允许自定义无边框窗口的行为。
+· 自动无边框：检测到实例后，自动在 3 秒后将其设为无边框窗口。
 
-### Log
+日志
 
-- "A log is a file or record containing information about activities in a computer system" -lenovo.com
-- Each log line can come from Jingle itself, a plugin, or a script.
-- `Upload Log` will upload the latest.log file to [MCLogs](https://mclogs.org/) and copy the URL to your clipboard.
-- Select `Show Debug Logs` to see even more spam. Unlike Julti, this will show debug logs from the past as well!
+· “日志是包含计算机系统活动信息的文件或记录”——lenovo.com
+· 每一行日志可能来自 Jingle 自身、插件或脚本。
+· 上传日志：将最新的日志文件（latest.log）上传至 MCLogs，并将 URL 复制到剪贴板。
+· 勾选 显示调试日志 可看到更多调试信息。与 Julti 不同，此选项还会显示过去的调试日志！
 
-### Hotkeys
+快捷键
 
-- An "action" or "hotkey action" is something that a set hotkey can do. Hotkey actions can be added by scripts,
-  plugins, or Jingle itself. As of v1.1.1, the only hotkeys available are from scripts.
-    - Hotkey actions from scripts are listed per script in the scripts section.
-- `Add` will let you add a new hotkey. You can select the desired hotkey action, set a keybind by pressing
-  `Set Hotkey Here...`, and choose how modifier keys affect this key.
-- When hotkeys are added, the Hotkeys tab will then show the list of hotkeys with some related information and
-  buttons.
-    - `Action` is the hotkey action for that key.
-    - `Hotkey` is the set key to run the action. A `*` symbol indicates that this key will ignore if Ctrl, Alt, or
-      Shift is being pressed.
-    - `Edit` will bring back the menu that was shown when originally adding the key, allowing you to change the key,
-      action, or modifier behaviour.
-    - `Remove` will immediately remove the key.
+· “操作”或“快捷键操作”是指某个快捷键可以执行的功能。快捷键操作可由脚本、插件或 Jingle 自身添加。从 v1.1.1 起，可用的快捷键仅来自脚本。
+  · 来自脚本的快捷键操作会在脚本部分的每个脚本下列出。
+· 添加：用于添加新快捷键。你可以选择所需的快捷键操作，通过点击 在此设置快捷键... 来设定按键，并选择修饰键对该按键的影响方式。
+· 添加快捷键后，快捷键选项卡会显示快捷键列表及其相关信息和按钮。
+  · 操作：该快捷键对应的操作。
+  · 快捷键：触发该操作的按键。若带有 * 符号，表示此按键在按下时将忽略 Ctrl、Alt 或 Shift 是否被按下。
+  · 编辑：重新打开添加时的设置菜单，允许更改按键、操作或修饰行为。
+  · 移除：立即删除该快捷键。
 
-### Scripts
+脚本
 
-- This tab shows a list of scripts. If a script ends with `.lua`, that means it has been manually added to the scripts
-  folder, otherwise it is a script packaged with Jingle.
-- Each listed script has a few buttons.
-    - `Customize` will show customization defined by a function in the script. It can be showing a whole menu of
-      options, or asking a single question. Scripts are also able to not define any customization function, and the
-      button will be greyed out.
-    - `More...` will show a menu of extra buttons defined by the script. As of v1.3.0, the default scripts do not have
-      any extra buttons.
-    - `Enable`/`Disable` is for default scripts packaged with Jingle, since you can't remove them from the folder, you
-      can disable them from running by pressing `Disable`, or bring back their functionality by pressing `Enable`.
-- `Open Scripts Folder` will open the folder where .lua files will be placed. The folder also contains a `libs` folder
-  containing all the functions a script can use.
-- `Reload Scripts` will reload all scripts and load new ones added to the scripts folder.
-- As of v2.0, there are 2 default scripts packaged with Jingle.
-    - **Coop Mode**: This script will automatically open to lan when joining a world. It will always do this if the
-      script is enabled. Press `Customize` to decide if you want cheats enabled (for /difficulty and /time set 0), and
-      change the delay before opening to lan.
-    - **Extra Keys**: This script adds 6 hotkeys actions and some customization.
-        - The customization for this script tweaks when the reset keys for this script are allowed to activate.
-        - `Safe Reset` is a hotkey action that will reset the world for you, but only if you are in a location selected
-          in the customization. **This will only work if you have a "Create New World" hotkey set in game, and it must
-          be set to something different from this hotkey.**
-        - `Quick Reset` is exactly like `Safe Reset`, except it will only work within the first 20 seconds of
-          joining a world. This is useful for setting to a mouse button or another easily accessible button to make
-          resetting more comfortable, but prevents accidentally pressing reset on a good run.
-        - `Disable Quick Reset` will disable the `Quick Reset` hotkey action until the next world is loaded. For
-          example, setting to left-click means once you start digging for a buried treasure, you can't accidentally
-          reset using `Quick Reset`.
-        - `Clear Worlds` is exactly like pressing the button from the `Jingle` tab.
-        - `Start Coping` will open to lan with cheats enabled and send "/gamemode spectator" to the in game chat. **This
-          will only work if you have an "Open Chat" key set in game.**
-        - `Minimize Instance` will minimize the Minecraft window to the task bar. Works with borderless windows.
+· 此选项卡显示脚本列表。如果脚本以 .lua 结尾，表示它是手动添加到 scripts 文件夹的；否则是 Jingle 自带的脚本。
+· 每个列出的脚本有几个按钮：
+  · 自定义：显示脚本中定义的自定义界面，可能是一个完整的选项菜单，也可能只是一个简单询问。脚本也可以不定义任何自定义函数，此时按钮会变灰不可用。
+  · 更多...：显示脚本定义的额外按钮菜单。截至 v1.3.0，默认脚本没有额外按钮。
+  · 启用/禁用：用于 Jingle 自带的默认脚本，因为你无法从文件夹中删除它们，可以通过 禁用 停止其运行，或通过 启用 恢复功能。
+· 打开脚本文件夹：打开存放 .lua 文件的文件夹。该文件夹还包含 libs 子文件夹，存放脚本可使用的所有函数库。
+· 重载脚本：重新加载所有脚本，并加载 scripts 文件夹中新增的脚本。
+· 自 v2.0 起，Jingle 自带两个默认脚本：
+  · 合作模式：此脚本会在进入世界时自动开启局域网（LAN）联机。启用脚本后始终执行此操作。点击 自定义 可设置是否开启作弊（用于 /difficulty 和 /time set 0），以及开启 LAN 前的延迟时间。
+  · 额外按键：此脚本添加了 6 个快捷键操作和一些自定义选项。
+    · 该脚本的自定义选项用于调整脚本中重置按键的允许激活条件。
+    · 安全重置：快捷键操作，会自动重置世界，但仅当你在自定义设置中选定的位置时才生效。此功能仅在游戏内设置了“创建新世界”快捷键，且该快捷键与此热键不同时才能工作。
+    · 快速重置：与 安全重置 完全相同，但仅会在进入世界后的前 20 秒内生效。适合绑定到鼠标按钮或其他方便按到的按键，使重置更舒适，同时防止在良好速通过程中误触重置。
+    · 禁用快速重置：在下次加载世界之前禁用 快速重置 快捷键操作。例如，将其绑定到左键点击，则一旦开始挖掘藏宝图，就不会因 快速重置 而误重置。
+    · 清理世界：与主界面 Jingle 选项卡中的按钮功能相同。
+    · 开始旁观：开启局域网并启用作弊，然后向游戏内聊天发送“/gamemode spectator”。此功能仅在游戏内设置了“打开聊天”快捷键时才能工作。
+    · 最小化实例：将 Minecraft 窗口最小化到任务栏。适用于无边框窗口。
 
-### Plugins
+插件
 
-- The only thing this tab does is provide a space for plugins to add their own tabs for customization or buttons (or
-  anything else that can be added to a GUI).
-- There are 4 default plugins as of Jingle v2.0:
-    - [`OBS Link`](https://github.com/DuncanRuns/Jingle-OBS-Link/) allows Jingle to detect whether you are on the wall
-      or are in a game, and switch between "Playing" and "Walling" scenes.
-    - [`PaceMan Tracker`](https://github.com/PaceMan-MCSR/PaceMan-Tracker/) tracks RSG Any% speedruns
-      for [PaceMan.gg](https://paceman.gg/). Setup and further information can be found through the website.
-    - [`Standard Switcher`](https://github.com/DuncanRuns/Jingle-Standard-Switcher) allows changing out the standard
-      settings file for the game. [Standard Settings](https://github.com/KingContaria/StandardSettings/) is a mod that
-      will reset your settings every time a new world is created. As of the release of SpeedrunAPI, all options can be
-      customized in game, so no options will be shown within Jingle itself (Unlike Standard manager in Julti, which came
-      before in game customization existed).
-        - `Open Standard Switcher Folder` will open the folder containing created settings files. Deleting files should
-          be done through this folder using Windows File Explorer.
-        - `Create New File` will create a new standard settings file, copying the instance's current standard settings.
-          It will then set the instance to use this file.
-        - `Switch to Another File` will allow switching the instance's current standard settings to any created file in
-          the Standard Switcher folder.
-    - [`Program Launching`](https://github.com/joe-ldp/Jingle-Launch-Programs) allows adding a list of programs/files
-      that are opened when pressing the launch button on the plugin tab or when using the quick action on the main
-      Jingle tab. It also allows launching a Minecraft instance with Prism Launcher or MultiMC and automatically
-      launching when Jingle launches.
+· 此选项卡的作用是为插件提供空间，让它们可以添加自己的自定义界面、按钮（或任何可添加到 GUI 的内容）。
+· 截至 Jingle v2.0，有四个默认插件：
+  · OBS Link：允许 Jingle 检测你是否在等待墙（Wall）或游戏中，并在“Playing”和“Walling”场景间切换。
+  · PaceMan Tracker：为 PaceMan.gg 追踪 RSG Any% 速通。设置及更多信息可通过该网站获取。
+  · Standard Switcher：允许更换游戏的标准设置文件。Standard Settings 是一个模组，会在每次创建新世界时重置你的设置。自 SpeedrunAPI 发布以来，所有选项都可以在游戏内自定义，因此 Jingle 内部不再显示选项（与 Julti 中的 Standard Manager 不同，后者在游戏内自定义出现之前就已存在）。
+    · 打开 Standard Switcher 文件夹：打开存放已创建设置文件的文件夹。删除文件应通过此文件夹使用 Windows 文件资源管理器进行。
+    · 创建新文件：创建一个新的标准设置文件，复制当前实例的标准设置。然后会将实例切换为使用此文件。
+    · 切换到其他文件：允许将实例的当前标准设置切换到 Standard Switcher 文件夹中已创建的任何文件。
+  · Program Launching：允许添加一组程序/文件，在按下插件选项卡上的启动按钮或主 Jingle 选项卡上的快捷操作时打开。它还支持使用 Prism Launcher 或 MultiMC 启动 Minecraft 实例，并可在 Jingle 启动时自动启动。
 
-### Community
+社区
 
-- This tab contains a list of buttons that link to various community resources that have some relation to Jingle.
-    - Retrieves buttons and links from
-      [community.json](https://raw.githubusercontent.com/DuncanRuns/Jingle/refs/heads/meta/community.json).
-- Includes a support section, with a button that links to [my ko-fi](https://ko-fi.com/DuncanRuns), and shows 3 random
-  supporters from [supporters.txt](https://raw.githubusercontent.com/DuncanRuns/Jingle/refs/heads/meta/supporters.txt)
-  every 5 seconds.
+· 此选项卡包含一系列按钮，链接到与 Jingle 相关的各种社区资源。
+  · 从 community.json 获取按钮和链接。
+· 包含一个支持区域，其中有一个链接到我的 ko-fi 的按钮，并每 5 秒显示来自 supporters.txt 的 3 位随机支持者。
 
-## Jingle Launcher
+Jingle Launcher
 
-A small executable program that will run any Jingle jar it finds in the same folder. This allows running as admin and
-pinning to the start menu. Additionally, it can be set up as a Toolscreen prelaunch by placing it in an instance with
-Toolscreen installed.
+一个小型可执行程序，会运行同一文件夹中找到的任何 Jingle jar 文件。这使得它可以以管理员身份运行并固定到开始菜单。此外，如果将其放置在安装了 Toolscreen 的实例中，还可以设置为 Toolscreen 的预启动程序。
 
-[Download](https://github.com/DuncanRuns/Jingle-Launcher/releases/latest) | [Source Code](https://github.com/DuncanRuns/Jingle-Launcher/)
+下载 | 源代码
 
-## Developing
+开发
 
-Jingle GUIs are made with the IntelliJ IDEA form designer, if you intend on changing GUI portions of the code, IntelliJ
-IDEA must be configured in a certain way to ensure the GUI form works properly:
+Jingle 的 GUI 使用 IntelliJ IDEA 表单设计器制作。如果你打算修改 GUI 部分的代码，必须按以下方式配置 IntelliJ IDEA，以确保 GUI 表单正常工作：
 
-- `Settings` -> `Build, Execution, Deployment` -> `Build Tools` -> `Gradle` -> `Build and run using: IntelliJ Idea`
-- `Settings` -> `Editor` -> `GUI Designer` -> `Generate GUI into: Java source code`
+· 设置 -> 构建、执行、部署 -> 构建工具 -> Gradle -> 构建和运行使用：IntelliJ IDEA
+· 设置 -> 编辑器 -> GUI 设计器 -> 生成 GUI 到：Java 源代码
